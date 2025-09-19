@@ -46,6 +46,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tiptime.ui.theme.TipTimeTheme
+import org.jetbrains.annotations.VisibleForTesting
 import java.text.NumberFormat
 import kotlin.math.round
 
@@ -172,8 +173,8 @@ fun EditNumberField(
     )
 
 }
-
-private fun calculateTip(amount: Double,
+@VisibleForTesting
+internal fun calculateTip(amount: Double,
                          tipPercent: Double,
                          roundUp: Boolean): String {
     var tip = tipPercent / 100 * amount
